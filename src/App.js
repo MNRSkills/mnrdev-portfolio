@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Nav";
+import Hero from "./components/Hero";
+import Skills from "./components/Jumbo";
+import Projects from "./components/Projects";
+import ContactUs from "./components/Contact";
+import GlobalStyles from "./components/styledComponent/Global";
 
 function App() {
+  console.log(process.env.REACT_APP_SPACE_ID);
   return (
-    <div className="App">
+    <>
+      <GlobalStyles />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Navbar />
+        {/* we need the navbar with links to git fm and twitter */}
+        <Hero />
       </header>
-    </div>
+      <section>
+        {/* this is language listing section */}
+
+        <Skills />
+      </section>
+      <section>
+        {/* this is project section */}
+        <Projects />
+      </section>
+      <section>
+        {/* this is contact section */}
+        <ContactUs />
+      </section>
+      <footer>{/* footer with like navbar */}</footer>
+    </>
   );
 }
 
